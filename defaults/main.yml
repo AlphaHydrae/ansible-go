@@ -1,2 +1,2 @@
 ---
-go_user: "{{ user | default(omit) }}"
+go_homebrew_user: "{{ homebrew_user | default(user) | default(omit) }}"
