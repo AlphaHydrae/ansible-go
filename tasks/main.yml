@@ -2,7 +2,11 @@
 
 # Homebrew
 - name: Install Go (Homebrew)
-  homebrew: name=go state=present
+  homebrew:
+    name:
+      - go
+      - dep
+    state: present
   become: true
   become_user: "{{ go_homebrew_user }}"
   when: ansible_pkg_mgr == 'homebrew'
