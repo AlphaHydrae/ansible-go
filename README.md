@@ -1,3 +1,4 @@
 # Ansible Go
 
-An ansible role that installs the Go language.
+An [Ansible](https://www.ansible.com) role that installs
+[Go](https://golang.org) with [asdf](https://asdf-vm.com).

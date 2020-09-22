@@ -1,21 +1,15 @@
 ---
 
 # Homebrew
-- name: Install Go (Homebrew)
+- name: Install dep (Homebrew)
   homebrew:
     name:
-      - go
       - dep
     state: present
   become: true
   become_user: "{{ go_homebrew_user }}"
   when: ansible_pkg_mgr == 'homebrew'
 
-# Yum
-- name: Install Go (Yum)
-  yum: pkg=golang state=present
-  when: ansible_pkg_mgr == 'yum'
-
 # Other package managers
 - fail: msg="{{ ansible_pkg_mgr }} is not a supported package manager (Homebrew or Yum are supported)"
-  when: ansible_pkg_mgr != 'yum' and ansible_pkg_mgr != 'homebrew'
+  when: ansible_pkg_mgr != 'homebrew'

@@ -1,2 +1,3 @@
 ---
 go_homebrew_user: "{{ homebrew_user | default(user) | default(omit) }}"
+go_version: 1.15.2
